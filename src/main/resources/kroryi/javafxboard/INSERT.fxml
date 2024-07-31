@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="880.0" styleClass="background-color" stylesheets="@myPageStyle.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kroryi.javafxboard.controller.InsertController">
+   <children>
+<!--    <fx:include source="MENU.fxml"/> -->
+      <Button layoutX="350.0" layoutY="499.0" mnemonicParsing="false" onAction="#moveToList" text="List to" textFill="WHITE" />
+      <Label alignment="CENTER" layoutX="-5.0" layoutY="-4.0" prefHeight="104.0" prefWidth="890.0" text="Board Write" textFill="WHITE">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Label>
+      <Label layoutX="220.0" layoutY="106.0" text="Title :" textFill="WHITE">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <Label layoutX="197.0" layoutY="198.0" text="Writer :" textFill="WHITE">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <Label layoutX="176.0" layoutY="282.0" text="Content :" textFill="WHITE">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tfTitle" layoutX="303.0" layoutY="100.0" prefHeight="48.0" prefWidth="342.0" text="Title">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="tfWriter" layoutX="303.0" layoutY="192.0" prefHeight="48.0" prefWidth="342.0" text="Writer">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </TextField>
+      <TextArea fx:id="taContent" layoutX="303.0" layoutY="282.0" prefHeight="200.0" prefWidth="342.0" text="Content" />
+      <Button layoutX="540.0" layoutY="499.0" mnemonicParsing="false" onAction="#insert" text="Insert" textFill="WHITE" />
+   </children>
+</AnchorPane>

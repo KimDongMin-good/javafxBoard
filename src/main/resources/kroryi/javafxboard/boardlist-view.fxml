@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Button?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="880.0" styleClass="backgrount-color" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kroryi.javafxboard.Controller">
+   <children>
+<!--         <fx:include source="MENU.fxml"/> -->
+      <Label alignment="CENTER" layoutY="14.0" prefHeight="50.0" prefWidth="880.0" text="Board List" textFill="WHITE">
+         <font>
+            <Font size="34.0" />
+         </font>
+      </Label>
+      <TableView fx:id="boardTableView" layoutX="218.0" layoutY="81.0" prefHeight="335.0" prefWidth="648.0">
+        <columns>
+          <TableColumn fx:id="colNo" prefWidth="58.0" text="No" />
+          <TableColumn fx:id="colTitle" prefWidth="182.0" text="Title" />
+            <TableColumn fx:id="colWriter" prefWidth="86.0" text="Writer" />
+            <TableColumn fx:id="colReg" prefWidth="163.0" text="Reg_date" />
+            <TableColumn fx:id="colUpd" minWidth="0.0" prefWidth="158.0" text="Upd_date" />
+        </columns>
+      </TableView>
+      <Button layoutX="245.0" layoutY="435.0" mnemonicParsing="false" onAction="#moveToInsert" prefHeight="29.0" prefWidth="91.0" text="Write" textFill="WHITE" />
+      <Button layoutX="779.0" layoutY="434.0" mnemonicParsing="false" onAction="#Close" prefHeight="29.0" prefWidth="76.0" text="close" textFill="WHITE" />
+      <Pagination fx:id="pagination" layoutX="458.0" layoutY="417.0" prefHeight="66.0" prefWidth="200.0" />
+      <VBox layoutX="14.0" layoutY="89.0" prefHeight="200.0" prefWidth="100.0" stylesheets="@style.css">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../../practice/practice/img/user.png" />
+               </image>
+            </ImageView>
+            <Button alignment="CENTER" mnemonicParsing="false" onAction="#GoMyPageBtn" prefHeight="29.0" prefWidth="167.0" text="My Page" textFill="WHITE" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

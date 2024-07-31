@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="618.0" prefWidth="847.0" styleClass="background-color" stylesheets="@myPageStyle.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kroryi.javafxboard.controller.MyPageController">
+   <children>
+      <VBox prefHeight="200.0" prefWidth="100.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <ImageView fitHeight="147.0" fitWidth="200.0" layoutX="346.0" layoutY="127.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../../practice/practice/img/user.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="lbUserName" alignment="CENTER" layoutX="345.0" layoutY="291.0" prefHeight="19.0" prefWidth="158.0" text="Username" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="26.0" />
+         </font>
+      </Label>
+      <Button layoutX="291.0" layoutY="457.0" mnemonicParsing="false" onAction="#moveToChange" text="Change" />
+      <Button layoutX="475.0" layoutY="457.0" mnemonicParsing="false" onAction="#resign" text="resign" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="880.0" styleClass="background-color" stylesheets="@myPageStyle.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kroryi.javafxboard.controller.RegisterController">
+   <children>
+<!--    <fx:include source="MENU.fxml"/> -->
+      <Label alignment="CENTER" layoutY="28.0" prefHeight="68.0" prefWidth="880.0" text="Register" textFill="WHITE">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <Label layoutX="321.0" layoutY="173.0" text="ID : " textFill="WHITE" />
+      <Label layoutX="277.0" layoutY="223.0" text="User Name : " textFill="WHITE" />
+      <Label layoutX="286.0" layoutY="280.0" text="Password : " textFill="WHITE" />
+      <Label layoutX="266.0" layoutY="334.0" text="Password(re) : " textFill="WHITE" />
+      <Button layoutX="465.0" layoutY="405.0" mnemonicParsing="false" onAction="#goToLogin" text="Go to Login" textFill="WHITE" />
+      <TextField fx:id="tfId" layoutX="384.0" layoutY="168.0" />
+      <TextField fx:id="tfUserName" layoutX="384.0" layoutY="218.0" />
+      <Button layoutX="326.0" layoutY="405.0" mnemonicParsing="false" onAction="#join" text="Join" textFill="WHITE" />
+      <PasswordField fx:id="tfPw" layoutX="384.0" layoutY="275.0" />
+      <PasswordField fx:id="tfPwre" layoutX="384.0" layoutY="329.0" />
+   </children>
+</AnchorPane>
