@@ -19,9 +19,9 @@ public class JDBConnection {
 
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
-            String url = "jdbc:mysql://localhost:3306/javafxboard?useSSL=false&allowPublicKeyRetrieval=true";
+            String url = "jdbc:mysql://localhost:3306/bbs?useSSL=false&allowPublicKeyRetrieval=true";
             String username = "root";
-            String passward = "159357";
+            String passward = "159357!@";
 
             con = DriverManager.getConnection(url, username, passward);
 //            System.out.println("DB 연결 성공");
