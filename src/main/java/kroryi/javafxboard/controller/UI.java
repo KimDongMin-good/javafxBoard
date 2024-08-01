@@ -9,7 +9,8 @@ public enum UI {
     REGISTER("/kroryi/javafxboard/REGISTER.fxml"),
     LOGIN("/kroryi/javafxboard/LOGIN.fxml"),
     MYPAGE("/kroryi/javafxboard/MYPAGE.fxml"),
-    ChangePage("/kroryi/javafxboard/ChangePage.fxml");
+    UserUpdate("/kroryi/javafxboard/UserUpdate.fxml"),
+    RESIGN("/kroryi/javafxboard/RESIGN.fxml");
 
     private final String path;
 

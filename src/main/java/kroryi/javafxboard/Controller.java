@@ -143,13 +143,13 @@ public class Controller implements Initializable {
 //        stage.show();
         SceneUtil.getInstance().switchScene(event, UI.INSERT.getPath());
     }
-//    public void moveToChange(ActionEvent event) throws IOException {
-//        System.out.println("회원정보 수정 화면 이동");
-//        SceneUtil.getInstance().switchScene(event, UI.ChangePage.getPath());
-//    }
-    public void moveToChange(ActionEvent event){
 
-    }
+//    public void moveToChange(ActionEvent event){
+//
+//    }
+//    public void moveToResign(ActionEvent event) throws IOException {
+//
+//    }
 
     public void Close(ActionEvent event) {
 

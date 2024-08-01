@@ -70,14 +70,17 @@ public class UserDAO extends JDBConnection{
         String sql = "delete from User where uid = ?";  //test   1
 
         try {
+            System.out.println("22222222222222222222:" + sql);
             pstmt = con.prepareStatement(sql);
+            System.out.println("22222222222222222223");
             pstmt.setInt(1, uid); //test  1
+            System.out.println("22222222222222222224");
             result = pstmt.executeUpdate();     //1
+            System.out.println("22222222222222222225");
         } catch (SQLException e) {
             e.printStackTrace();
             System.out.println("회원탈퇴 에러");
         }
-
         return result;
     }
 }

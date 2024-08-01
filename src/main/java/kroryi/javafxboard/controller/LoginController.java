@@ -12,6 +12,7 @@ import kroryi.javafxboard.Controller;
 import kroryi.javafxboard.dto.User;
 import kroryi.javafxboard.service.UserService;
 import kroryi.javafxboard.service.UserServiceImpl;
+import kroryi.javafxboard.util.CommonStatic;
 import kroryi.javafxboard.util.SceneUtil;
 
 import java.io.IOException;
@@ -46,6 +47,9 @@ public class LoginController {
                     return;
                 }else{
                     showAlert(ErrorCode.LOGIN_SUCCESS, user.getUserId(), Alert.AlertType.INFORMATION);
+                    CommonStatic.setUid(user.getuId());
+                    CommonStatic.setUserId(user.getUserId());
+                    CommonStatic.setUserName(user.getUserName());
                     Controller controller = (Controller) SceneUtil.getInstance().getController(UI.LIST.getPath());
                     controller.userid = user.getUserId();
                     Parent root = SceneUtil.getInstance().getRoot();

@@ -9,11 +9,12 @@ import javafx.scene.control.TextField;
 import kroryi.javafxboard.dto.User;
 import kroryi.javafxboard.service.UserService;
 import kroryi.javafxboard.service.UserServiceImpl;
+import kroryi.javafxboard.util.CommonStatic;
 import kroryi.javafxboard.util.SceneUtil;
 
 import java.io.IOException;
 
-public class ChangeController {
+public class UserUpdateController {
 
     @FXML
     private Label lbUserName;
@@ -59,9 +60,13 @@ public class ChangeController {
             user.setUserId(userId);
             user.setPassword(userPassword);
             int result = userService.update(user);
+
             System.out.println(user.toString());
             System.out.println("result:" + result);
             if (result > 0) {
+                CommonStatic.setUserName(user.getUserName());
+                CommonStatic.setUserId(user.getUserId());
+                CommonStatic.setPassword(user.getPassword());
                 showAlert("정보수정 완료");
                 SceneUtil.getInstance().switchScene(event, UI.LOGIN.getPath());
             } else {
