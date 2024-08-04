@@ -11,6 +11,7 @@ import kroryi.javafxboard.dto.Board;
 import kroryi.javafxboard.dto.User;
 import kroryi.javafxboard.service.UserService;
 import kroryi.javafxboard.service.UserServiceImpl;
+import kroryi.javafxboard.util.CommonStatic;
 import kroryi.javafxboard.util.SceneUtil;
 
 import java.io.IOException;
@@ -42,8 +43,8 @@ public class MyPageController {
     }
 
     public void read(String userid) {
-        User user = userService.select(String.valueOf(userid));
-        uid = user.getuId();
-        lbUserName.setText(user.getUserName());
+//        User user = userService.select(String.valueOf(userid));
+//        uid = user.getuId();
+        lbUserName.setText(CommonStatic.getUserName()+"님 환영합니다.");
     }
 }

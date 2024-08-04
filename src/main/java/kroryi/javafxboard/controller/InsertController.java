@@ -7,6 +7,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -28,7 +29,7 @@ public class InsertController {
     @FXML
     private TextField tfTitle;
     @FXML
-    private TextField tfWriter;
+    private Label lbWriter;
     @FXML
     private TextArea taContent;
 
@@ -47,16 +48,11 @@ public class InsertController {
     public void insert(ActionEvent event) throws IOException {
 
         String title = tfTitle.getText();
-        String writer = tfWriter.getText();
+        String writer = lbWriter.getText();
         String content = taContent.getText();
 
         if(title == null || title.trim().isEmpty()){
             showAlert("제목을 입력하세요");
-            return;
-        }
-
-        if(writer == null || title.trim().isEmpty()){
-            showAlert("작성자를 입력하세요");
             return;
         }
 
@@ -65,7 +61,7 @@ public class InsertController {
             return;
         }
 
-        Board board = new Board(tfTitle.getText(), tfWriter.getText(), taContent.getText());
+        Board board = new Board(tfTitle.getText(), lbWriter.getText(), taContent.getText());
 
         int result = boardService.insert(board);
 

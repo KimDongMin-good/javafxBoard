@@ -2,6 +2,7 @@ package kroryi.javafxboard.dao;
 
 import kroryi.javafxboard.Controller;
 import kroryi.javafxboard.dto.Board;
+import kroryi.javafxboard.util.CommonStatic;
 
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
@@ -78,7 +79,7 @@ public class BoardDAO extends JDBConnection {
         try {
             pstmt = con.prepareStatement(sql);
             pstmt.setString(1, board.getTitle());
-            pstmt.setString(2, board.getWriter());
+            pstmt.setString(2, CommonStatic.getUserId());
             pstmt.setString(3, board.getContent());
 
             result = pstmt.executeUpdate();

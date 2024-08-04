@@ -16,14 +16,14 @@ import java.io.IOException;
 
 public class UserUpdateController {
 
-    @FXML
-    private Label lbUserName;
+//    @FXML
+//    private Label lbUserName;
     @FXML
     private TextField tfUserId;
     @FXML
     private PasswordField tfUserPassword;
     @FXML
-    private PasswordField tfPasswordChk;
+    private PasswordField tfUserPasswordCK;
 
 
     int uid;
@@ -40,7 +40,7 @@ public class UserUpdateController {
     public void MyPageBtn(ActionEvent event) throws IOException {
         String userId = tfUserId.getText();
         String userPassword = tfUserPassword.getText();
-        String passwordChk = tfPasswordChk.getText();
+        String passwordChk = tfUserPasswordCK.getText();
         if (userId == null || userId.trim().isEmpty()) {
             showAlert("아이디를 입력하세요.");
             return;
