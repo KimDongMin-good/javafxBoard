@@ -6,6 +6,7 @@ import javafx.scene.control.*;
 import kroryi.javafxboard.dto.Board;
 import kroryi.javafxboard.service.BoardService;
 import kroryi.javafxboard.service.BoardServiceImpl;
+import kroryi.javafxboard.util.CommonStatic;
 import kroryi.javafxboard.util.SceneUtil;
 
 import java.io.IOException;
@@ -14,7 +15,7 @@ public class UpdateController {
     @FXML
     public TextField tfTitle;
     @FXML
-    public TextField tfWriter;
+    public Label UlbWriter;
     @FXML
     public TextField tfRegDate;
     @FXML
@@ -28,13 +29,13 @@ public class UpdateController {
         this.boardNo = boardNo;
         Board board = boardService.select(boardNo);
         tfTitle.setText(board.getTitle());
-        tfWriter.setText(board.getWriter());
+        UlbWriter.setText(CommonStatic.getUserId());
         taContent.setText(board.getContent());
         tfRegDate.setText(board.getRegDate());
     }
 
     public void moveToUpdate(ActionEvent event) throws IOException {
-        Board board = new Board(tfTitle.getText(),taContent.getText(),tfWriter.getText());
+        Board board = new Board(tfTitle.getText(), UlbWriter.getText(), taContent.getText());
         board.setNo(boardNo);
         int result = boardService.update(board);
         if(result > 0) {

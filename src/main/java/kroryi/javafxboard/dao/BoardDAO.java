@@ -92,14 +92,13 @@ public class BoardDAO extends JDBConnection {
 
     public int update(Board board) {
         int result = 0;
-        String sql = "update Board set title = ?, writer = ?, content = ?, upd_date = now() where no = ?";
+        String sql = "update Board set title = ?, content = ?, upd_date = now() where no = ?";
 
         try {
             pstmt = con.prepareStatement(sql);
             pstmt.setString(1, board.getTitle());
-            pstmt.setString(2, board.getWriter());
-            pstmt.setString(3, board.getContent());
-            pstmt.setInt(4, board.getNo());
+            pstmt.setString(2, board.getContent());
+            pstmt.setInt(3, board.getNo());
 
             result = pstmt.executeUpdate();
         } catch (SQLException e) {

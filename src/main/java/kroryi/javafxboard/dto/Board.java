@@ -4,6 +4,7 @@ import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.scene.control.CheckBox;
+import kroryi.javafxboard.util.CommonStatic;
 
 public class Board {
     private SimpleIntegerProperty no;

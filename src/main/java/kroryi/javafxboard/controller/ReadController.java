@@ -4,13 +4,11 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import kroryi.javafxboard.dto.Board;
 import kroryi.javafxboard.service.BoardService;
 import kroryi.javafxboard.service.BoardServiceImpl;
+import kroryi.javafxboard.util.CommonStatic;
 import kroryi.javafxboard.util.SceneUtil;
 
 import java.io.IOException;
@@ -25,7 +23,7 @@ public class ReadController implements Initializable {
     public TextField tfTitle;
 
     @FXML
-    public TextField tfWriter;
+    public Label RlbWriter;
 
     @FXML
     public TextField tfRegDate;
@@ -50,7 +48,7 @@ public class ReadController implements Initializable {
         System.out.println("1111-?"+board);
 
         tfTitle.setText(board.getTitle());
-        tfWriter.setText(board.getWriter());
+        RlbWriter.setText(CommonStatic.getUserId());
         taContent.setText(board.getContent());
         tfRegDate.setText(board.getRegDate());
     }
