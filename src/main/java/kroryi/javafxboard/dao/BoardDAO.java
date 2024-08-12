@@ -148,16 +148,24 @@ public class BoardDAO extends JDBConnection {
         Controller controller = new Controller();
 
         try {
-            String sql = "select * from Board order by no desc limit ? offset ?";
+            int pageSize = controller.getPageSize();    // 11
+            int offset = (pageNo - 0) * pageSize;       // 시작 페이지 0
+            System.out.println(pageSize);
+
+            String sql = "select * from Board order by no DESC limit ? offset ?";
 
             pstmt = con.prepareStatement(sql);
-            pstmt.setInt(1, controller.getPageSize());
-            pstmt.setInt(2, pageNo * controller.getPageSize());
+            pstmt.setInt(1, pageSize);
+            pstmt.setInt(2, offset);
             rs = pstmt.executeQuery();
+
+            int startNumber = offset + 1;
+            System.out.println(offset+ ": offset");
+            System.out.println(pageSize+ ": pageSize");
 
             while (rs.next()) {
                 Board board = new Board();
-                board.setNo(rs.getInt("no"));
+                board.setNo(startNumber);
                 board.setTitle(rs.getString("title"));
                 board.setWriter(rs.getString("writer"));
                 board.setContent(rs.getString("content"));
@@ -165,7 +173,9 @@ public class BoardDAO extends JDBConnection {
                 board.setUpdDate(dateFormat.format(rs.getTimestamp("upd_date")));
 
                 boardList.add(board);
+                startNumber++;
             }
+//            System.out.println("스타트 넘버"+startNumber);
         } catch (SQLException e) {
             System.out.println("게시판 페이징 오류 발생");
             e.printStackTrace();

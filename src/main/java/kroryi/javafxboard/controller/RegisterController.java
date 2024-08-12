@@ -37,7 +37,7 @@ public class RegisterController implements Initializable {
 
     private void showAlert(String msg) {
         Alert alert = new Alert(Alert.AlertType.WARNING);
-        alert.setTitle("입력 오류");
+        alert.setTitle("알림창");
         alert.setHeaderText(null);
         alert.setContentText(msg);
         alert.showAndWait();

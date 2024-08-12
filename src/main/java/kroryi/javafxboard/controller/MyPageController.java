@@ -43,8 +43,6 @@ public class MyPageController {
     }
 
     public void read(String userid) {
-//        User user = userService.select(String.valueOf(userid));
-//        uid = user.getuId();
         lbUserName.setText(CommonStatic.getUserName()+"님 환영합니다.");
     }
 }

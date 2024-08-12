@@ -13,4 +13,7 @@ public interface BoardService {
 
     List<Board> pageList(int pageNo);
     int totalListCount();
+
 }
+
+

@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.*;
+import kroryi.javafxboard.dao.BoardDAO;
 import kroryi.javafxboard.dto.Board;
 import kroryi.javafxboard.service.BoardService;
 import kroryi.javafxboard.service.BoardServiceImpl;
@@ -33,6 +34,7 @@ public class ReadController implements Initializable {
 
     private BoardService boardService = new BoardServiceImpl();
     int boardNo;
+//    BoardDAO boardDAO = new BoardDAO();
 
     List<Integer> numArr = new ArrayList<>();
     int targetValue = boardNo;
@@ -45,7 +47,8 @@ public class ReadController implements Initializable {
         this.targetValue = boardNo;
         this.boardNo = boardNo;
         Board board = boardService.select(boardNo);
-        System.out.println("1111-?"+board);
+        System.out.println(boardNo);
+        System.out.println("1111-?"+board);     // 게시판 상세보기 확인용
 
         tfTitle.setText(board.getTitle());
         RlbWriter.setText(CommonStatic.getUserId());

@@ -80,7 +80,9 @@ public class Controller implements Initializable {
 
         totalCount = boardService.totalListCount();
         totalCount = totalCount == 0 ? 1 : totalCount;
+        System.out.println(totalCount);
         totalPage = (totalCount + pageSize - 1)/pageSize;
+        System.out.println(totalPage);
 
         pagination.setPageCount(totalPage);
         pagination.setMaxPageIndicatorCount(pageSize);
@@ -127,7 +129,6 @@ public class Controller implements Initializable {
                 }
             }
         });
-
     }
 
 
@@ -199,6 +200,5 @@ public class Controller implements Initializable {
         myPageController.read(userid);
         Parent root = SceneUtil.getInstance().getRoot();
         SceneUtil.getInstance().switchScene(event, UI.MYPAGE.getPath(), root);
-
     }
 }

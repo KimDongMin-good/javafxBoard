@@ -3,12 +3,16 @@ package kroryi.javafxboard.service;
 import kroryi.javafxboard.dao.BoardDAO;
 import kroryi.javafxboard.dto.Board;
 
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.List;
 
 public class BoardServiceImpl implements BoardService {
 
 
     private BoardDAO boardDAO = new BoardDAO();
+    private Connection connection;
 
     @Override
     public List<Board> list() {
@@ -51,5 +55,4 @@ public class BoardServiceImpl implements BoardService {
         int count = boardDAO.selectTotalCount();
         return count;
     }
-
 }

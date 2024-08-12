@@ -9,7 +9,6 @@ public class BoardApp {
         static BoardService boardService = new BoardServiceImpl();
 
         public static void main(String[] args) {
-//             1번답 목록보기 결과창이랑 db 캡쳐
             for(Board board: boardService.list()){
                 System.out.println(board.getNo()+" "+board.getTitle()+" "+board.getWriter()+" "+ board.getRegDate());
             }
