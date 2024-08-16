@@ -14,6 +14,7 @@ import kroryi.javafxboard.util.SceneUtil;
 
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -24,13 +25,13 @@ public class ReadController implements Initializable {
     public TextField tfTitle;
 
     @FXML
-    public Label RlbWriter;
-
-    @FXML
     public TextField tfRegDate;
 
     @FXML
     public TextArea taContent;
+
+    @FXML
+    public Label RlbWriter;
 
     private BoardService boardService = new BoardServiceImpl();
     int boardNo;
@@ -47,13 +48,13 @@ public class ReadController implements Initializable {
         this.targetValue = boardNo;
         this.boardNo = boardNo;
         Board board = boardService.select(boardNo);
-        System.out.println(boardNo);
+        System.out.println(boardNo + " read (boardNo)");
         System.out.println("1111-?"+board);     // 게시판 상세보기 확인용
 
         tfTitle.setText(board.getTitle());
         RlbWriter.setText(CommonStatic.getUserId());
         taContent.setText(board.getContent());
-        tfRegDate.setText(board.getRegDate());
+        tfRegDate.setText(String.valueOf(LocalDate.now()));
     }
 
     public void moveToPrev(ActionEvent event) {

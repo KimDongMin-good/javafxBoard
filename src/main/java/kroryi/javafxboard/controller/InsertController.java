@@ -14,6 +14,7 @@ import javafx.stage.Stage;
 import kroryi.javafxboard.dto.Board;
 import kroryi.javafxboard.service.BoardService;
 import kroryi.javafxboard.service.BoardServiceImpl;
+import kroryi.javafxboard.util.CommonStatic;
 import kroryi.javafxboard.util.SceneUtil;
 
 import java.io.IOException;
@@ -35,20 +36,12 @@ public class InsertController {
 
     public void moveToList(ActionEvent event) throws IOException {
         System.out.println("글 목록 화면 이동");
-//        FXMLLoader loader = new FXMLLoader(getClass().getResource(UI.LIST.getPath()));
-
-//        root = loader.load();
-//        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-//        scene = new Scene(root);
-//        stage.setScene(scene);
-//        stage.show();
         SceneUtil.getInstance().switchScene(event, UI.LIST.getPath());
     }
 
     public void insert(ActionEvent event) throws IOException {
 
         String title = tfTitle.getText();
-        String writer = lbWriter.getText();
         String content = taContent.getText();
 
         if(title == null || title.trim().isEmpty()){
@@ -61,7 +54,7 @@ public class InsertController {
             return;
         }
 
-        Board board = new Board(tfTitle.getText(), lbWriter.getText(), taContent.getText());
+        Board board = new Board(tfTitle.getText(), taContent.getText());
 
         int result = boardService.insert(board);
 

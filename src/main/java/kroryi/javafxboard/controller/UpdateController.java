@@ -32,10 +32,11 @@ public class UpdateController {
         UlbWriter.setText(CommonStatic.getUserId());
         taContent.setText(board.getContent());
         tfRegDate.setText(board.getRegDate());
+        System.out.println(board + " 업데이트");
     }
 
     public void moveToUpdate(ActionEvent event) throws IOException {
-        Board board = new Board(tfTitle.getText(), UlbWriter.getText(), taContent.getText());
+        Board board = new Board(tfTitle.getText(), taContent.getText(), UlbWriter.getText());
         board.setNo(boardNo);
         int result = boardService.update(board);
         if(result > 0) {

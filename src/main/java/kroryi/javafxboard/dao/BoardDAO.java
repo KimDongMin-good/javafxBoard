@@ -13,6 +13,7 @@ import java.util.List;
 public class BoardDAO extends JDBConnection {
 
     SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+    int startNumber;
 
     public List<Board> selectlist() {
 
@@ -33,12 +34,6 @@ public class BoardDAO extends JDBConnection {
                 board.setRegDate(dateFormat.format(rs.getTimestamp("reg_date")));
                 board.setUpdDate(dateFormat.format(rs.getTimestamp("upd_date")));
 
-//                System.out.print(rs.getInt("no"));
-//                System.out.print(" | ");
-//                System.out.print(rs.getString("title"));
-//                System.out.print(" | ");
-//                System.out.print(rs.getString("content"));
-//                System.out.println(" ");
                 boardList.add(board);
             }
         } catch (Exception e) {
@@ -60,13 +55,15 @@ public class BoardDAO extends JDBConnection {
                 board.setNo(rs.getInt("no"));
                 board.setTitle(rs.getString("title"));
                 board.setContent(rs.getString("content"));
+                board.setWriter(CommonStatic.getUserId());
                 board.setRegDate(dateFormat.format(rs.getTimestamp("reg_date")));
                 board.setUpdDate(dateFormat.format(rs.getTimestamp("upd_date")));
             }
 
+            System.out.println(board.getNo());
         } catch (Exception e) {
             e.printStackTrace();
-            System.out.println("게시글 조회 시 에러 발생");
+            System.out.println("게시글 조회 시 에러 발생111111111");
         }
         return board;
     }
@@ -159,23 +156,17 @@ public class BoardDAO extends JDBConnection {
             pstmt.setInt(2, offset);
             rs = pstmt.executeQuery();
 
-            int startNumber = offset + 1;
-            System.out.println(offset+ ": offset");
-            System.out.println(pageSize+ ": pageSize");
-
             while (rs.next()) {
                 Board board = new Board();
-                board.setNo(startNumber);
+                board.setNo(rs.getInt("no"));
                 board.setTitle(rs.getString("title"));
                 board.setWriter(rs.getString("writer"));
-                board.setContent(rs.getString("content"));
+//                board.setContent(rs.getString("content"));
                 board.setRegDate(dateFormat.format(rs.getTimestamp("reg_date")));
                 board.setUpdDate(dateFormat.format(rs.getTimestamp("upd_date")));
 
                 boardList.add(board);
-                startNumber++;
             }
-//            System.out.println("스타트 넘버"+startNumber);
         } catch (SQLException e) {
             System.out.println("게시판 페이징 오류 발생");
             e.printStackTrace();

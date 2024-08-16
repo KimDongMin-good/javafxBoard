@@ -32,6 +32,13 @@ public class Board {
         this.checkBox = new CheckBox();
     }
 
+    public Board(int no, String title, String content) {
+        this.no = new SimpleIntegerProperty(no);
+        this.title = new SimpleStringProperty(title);
+        this.content = new SimpleStringProperty(content);
+        this.selected = new SimpleBooleanProperty(false);
+        this.checkBox = new CheckBox();
+    }
 
     public Board(String title, String content, String writer, String regDate, String updDate) {
         this.title = new SimpleStringProperty(title);
@@ -41,6 +48,11 @@ public class Board {
         this.updDate = new SimpleStringProperty(updDate);
         this.selected = new SimpleBooleanProperty(false);
         this.checkBox = new CheckBox();
+    }
+
+    public Board(String title, String content) {
+        this.title = new SimpleStringProperty(title);
+        this.content = new SimpleStringProperty(content);
     }
 
     public int getNo() {
