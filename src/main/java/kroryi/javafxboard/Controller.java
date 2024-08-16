@@ -152,8 +152,8 @@ public class Controller implements Initializable {
 //
 //    }
 
-    public void Close(ActionEvent event) {
-
+    public void Close(ActionEvent event) throws IOException {
+        SceneUtil.getInstance().switchScene(event, UI.LOGIN.getPath());
     }
 
     public void pageListAll(int pageIndex) {
