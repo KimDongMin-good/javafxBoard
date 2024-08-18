@@ -53,6 +53,10 @@ public class RegisterController implements Initializable {
             showAlert("아이디를 입력하세요.");
             return;
         }
+        if (userId == userId){
+            showAlert("이미 사용중인 아이디입니다.");
+            return;
+        }
         if (userName == null || userName.trim().isEmpty()) {
             showAlert("사용자명을 입력하세요.");
             return;
